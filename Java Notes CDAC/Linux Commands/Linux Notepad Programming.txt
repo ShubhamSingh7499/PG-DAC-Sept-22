@@ -1,0 +1,431 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+................................Program 1   ... simple input and printing 
+
+#!/bin/bash
+echo Enter Id
+read id
+
+echo Enter Name
+read name
+
+echo Enter roll
+read roll
+
+echo Displaying Entered Data
+echo name= $name
+echo id= $id
+echo roll= $roll
+
+.................................Output
+
+
+$ ./p1.sh
+Enter Id
+123
+Enter Name
+pratik
+Enter roll
+123
+Displaying Entered Data
+name= pratik
+id= 123
+roll= 123
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+................................Program 2 .... PErform all arithmetic operations
+
+#!/bin/bash
+
+echo Enter First No.
+read a
+
+echo Enter Second No.
+read b
+
+((sum=$a+$b))
+echo $sum
+
+((sub=$a-$b))
+echo $sub
+
+((mul=$a*$b))
+echo $mul
+
+((div=$a/$b))
+echo $div
+
+
+.................................Output
+
+
+Enter First No.
+200
+Enter Second No.
+10
+210
+190
+2000
+20
+0
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+................................Program 3 ...... Check Entered no. is Even ...SImple if else
+
+#!/bin/bash
+
+echo "Enter Any Number"
+read n
+
+if [[ $n%2 -eq 0 ]]
+then
+
+        echo No. is Even
+
+else
+
+        echo No. is Odd
+
+fi
+
+
+.................................Output
+
+Enter Any Number
+6
+No. is Even
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+................................Program 4.... If else if ladder ... Biggest of threee no.
+
+echo Enter First No.
+read a
+
+echo Enter Second No.
+read b
+
+echo Enter Third No.
+read c
+
+
+if [[ $a -gt $b && $a -gt $c ]]
+then
+        echo First No. is biggest i.e. = $a
+
+elif [[ $b -gt $c ]]
+then
+        echo Second No. is Biggest i.e. = $b
+
+else
+
+
+
+        echo Third No. is Biggest i.e. = $c
+
+fi
+
+
+.................................Output
+
+$ ./p4.sh
+Enter First No.
+12
+Enter Second No.
+32
+Enter Third No.
+64
+Third No. is Biggest i.e. = 64
+
+$ ./p4.sh
+Enter First No.
+65
+Enter Second No.
+12
+Enter Third No.
+32
+First No. is biggest i.e. = 65
+
+
+$ ./p4.sh
+Enter First No.
+45
+Enter Second No.
+65
+Enter Third No.
+23
+Second No. is Biggest i.e. = 65
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+................................Program 5.... Nested If else ... No. >15 and Even 
+
+#!/bin/bash
+
+echo Enter Any No.
+read a
+
+if [ $a -gt 15 ]
+then
+        if [[ $a%2 -eq 0 ]]
+        then
+                echo No. is Greater Than 15 and Even
+
+        else
+                echo No. is Greater Than 15 But Odd
+        fi
+
+else
+
+        echo Enter Correct Input
+
+fi
+
+
+.................................Output
+
+Enter Any No.
+46
+No. is Greater Than 15 and Even
+
+Enter Any No.
+12
+Enter Correct Input
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+................................Program 6.... Switch Case for Arithmetic Operations
+
+#./bin/bash
+
+echo First no.
+read a
+
+echo Second No.
+read b
+
+echo 1. Multiplication
+echo 2. Division
+echo 3. Addition
+echo 4. Substraction
+echo 5. Modulus
+
+read c
+
+case $c in
+
+        1) echo Multiplication is = $((a*b));;
+
+        2) echo Division is = $((a/b));;
+
+        3) echo Addition is = $((a+b));;
+
+        4) echo Substraction is = $((a-b));;
+
+        5) echo Modulus is = $((a%b));;
+
+        *) echo Enter Correct No. of Operation and Try Again
+
+esac
+
+.................................Output
+
+First no.
+86
+Second No.
+23
+1. Multiplication
+2. Division
+3. Addition
+4. Substraction
+5. Modulus
+5
+Modulus is = 17
+
+$ ./p6.sh
+First no.
+25
+Second No.
+23
+1. Multiplication
+2. Division
+3. Addition
+4. Substraction
+5. Modulus
+3
+Addition is = 48
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+a=10
+
+a=`expr $a + 1`
+
+`expr $a + 1`...............if we want to get values quickly 
+a++
+
+a=10
+
+((a++))................. to update.....doesnt display 
+
+$a
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+................................Program 7.... While Loop ... Works from true to false
+
+#!/bin/bash
+
+n=1
+
+while [ $n -le 10 ]
+do
+        echo $n
+        (( n++ ))
+
+done
+
+orrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrororororororororo
+
+
+#!/bin/bash
+
+n=1
+
+while [ $n -le 10 ]
+do
+        echo $n
+      n= ` expr $n + 1 `
+
+done
+
+.................................Output
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+...............................Program 8............ For Loop 
+
+#!/bin/bash
+
+echo Enter Any no. between 1-10
+read n
+
+
+for ((i=$n; i<=15; i++))
+
+do
+        echo $i
+done
+
+.................................Output
+
+Enter Any no. between 1-10
+10
+10
+11
+12
+13
+14
+15
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+...............................Program 9 ............ Until works from false to true 
+
+#!/bin/bash
+
+echo Enter A no. Between 1-10
+read n
+
+until [ $n -eq 0 ]
+do
+
+        echo $n
+
+        n=` expr $n - 1 `
+
+done
+
+.................................Output
+
+Enter A no. Between 1-10
+8
+8
+7
+6
+5
+4
+3
+2
+1
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+...............................Program 10............Palindrome
+
+#!/bin/bash
+
+echo Enter a No. to check for Palindrome
+read n
+
+temp=$n
+new=0
+
+while [ $temp -gt 0 ]
+do
+   dig=` expr $temp % 10 `
+        new=` expr $new \* 10 + $dig `
+        temp=` expr $temp / 10 `
+done
+
+if [ $new -eq $n ]
+then
+        echo No. is Palindrome
+else
+        echo No. is Not Palindrome
+fi
+
+
+
+
+
+
+
+.................................Output
+
+Enter a No. to check for Palindrome
+125
+No. is Not Palindrome
+
+Enter a No. to check for Palindrome
+363
+No. is Palindrome
+ 
+ 
+ 
+ ..................................
+sum=((a+b))
+echo $sum 
+echo sum=((a+b)) | > abc.txt
+
+
+sort -r abc.txt | head -2  *******
+ 
