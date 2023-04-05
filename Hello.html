@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .parent{
+            display: flex; 
+            justify-content: space-around;     
+        } 
+        .child1{
+            background-color: orange;
+        }
+    
+        .child2{
+           
+            background-color: red;
+            position: relative;
+            
+
+        }
+    
+        .child3{
+            position: relative;
+            
+            background-color: black;
+            
+        }
+    </style> -->
+</head>
+
+
+
+<body>
+
+    <!-- <script>
+        function message() {
+            document.write("hello");
+        }
+
+    </script> -->
+    <div>
+
+        <form id="form">
+
+            <label for="Username">Username</label>
+            <input id="uname" type="text" placeholder="Enter Username">
+
+            <label for="Password">Password</label>
+            <input id="upass" type="password" placeholder="Enter Password">
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+ <!-- <div class="parent">
+    <div class="child1">Shubham</div>
+    <div class="child2">Gajala</div>
+    <div class="child3">SHubham2</div>
+</div> -->
+
+</body>
+
+<script>
+
+    var form1 = document.getElementById('form');
+
+    form1.addEventListener('submit',function(event){
+     event.preventDefault();
+
+         let a = document.getElementById('uname').value;
+        let b = document.getElementById('upass').value;
+
+        console.log(a);
+        console.log(b);
+
+    })
+ </script>
+
+
+</html>
